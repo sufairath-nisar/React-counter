@@ -10,18 +10,21 @@ function App() {
   const incrementSet = () =>{
     setCounter(counter + 1)
   }
-  const decrementSet = () =>{
-    setCounter(counter - 1)
+  const decrementSet = () =>{ 
+      setCounter(counter - 1) 
   }
   return (
     <div className="App App-header">
-      <h1 >Counter number is {counter}</h1> 
+    <div className='bg-cls py-5 px-3 align-items-center'>
+      <h3>Counter number is <h1><span className='fw-bolder'>{counter}</span></h1></h3> 
       <br/>
-      <div className='my-5'>
-        <button className='btn btn-success fw-bold' onClick={incrementSet}>+</button> 
-       <button className='btn btn-danger fw-bold ms-3' onClick={decrementSet}>-</button> 
-       </div>
-      
+        <div className='my-4'>
+          <button className='btn btn-success fw-bold w-25' onClick={incrementSet}>+</button> 
+          {
+          counter>0 && <button className='btn btn-danger fw-bold w-25 ms-3' id='decrementId' onClick={decrementSet}>-</button>
+          }        
+        </div> 
+    </div>
     </div>
   );
 }
